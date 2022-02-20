@@ -15,5 +15,24 @@ namespace QuadraticEquationSolver
         {
             return B * B - 4 * A * C;
         }
+
+        public override string? ToString()
+        {
+            string res = $"";
+            if (A == 1)
+                res += "x^2";
+            else if (A != 0)
+                res += $"{A}x^2";
+            if (B > 0)
+                res += $" + {B}x";
+            else if(B < 0)
+                res += $" - {B * -1}x";
+            if (C > 0)
+                res += $" + {C}";
+            else if (C < 0)
+                res += $" - {C * -1}";
+            res += " = 0";
+            return res;
+        }
     }
 }
