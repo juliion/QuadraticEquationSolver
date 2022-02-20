@@ -8,11 +8,7 @@ namespace QuadraticEquationSolver
     {
         public static void Main(string[] args)
         {
-            QuadraticEquation qe = new QuadraticEquation();
-            qe.A = 1;
-            qe.B = 5;
-            qe.C = -6;
-            qe.Solve();
+           lfklsdkjkjfskdjkjlksjkljkljklklkljdsk
         }
     }
 }
