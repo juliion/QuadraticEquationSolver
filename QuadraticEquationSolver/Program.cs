@@ -30,6 +30,36 @@ namespace QuadraticEquationSolver
                     qm.Solve();
                 }
             }
+            else
+            {
+                string buff;
+                double a, b, c;
+                do
+                {
+                    Console.Write("Enter a: ");
+                    buff = Console.ReadLine();
+                    Console.Clear();
+                } while (!double.TryParse(buff, out a));
+                do
+                {
+                    Console.Write("Enter b: ");
+                    buff = Console.ReadLine();
+                    Console.Clear();
+                } while (!double.TryParse(buff, out b));
+                do
+                {
+                    Console.Write("Enter a: ");
+                    buff = Console.ReadLine();
+                    Console.Clear();
+                } while (!double.TryParse(buff, out c));
+                QuadraticEquation qm = new QuadraticEquation()
+                {
+                    A = a,
+                    B = b,
+                    C = c
+                };
+                qm.Solve();
+            }
         }
     }
 }
