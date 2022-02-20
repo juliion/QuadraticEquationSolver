@@ -19,6 +19,31 @@ namespace QuadraticEquationSolver
         {
             return (-1 * B + sqrtD) / (2 * A);
         }
+        public void Solve()
+        {
+            double D = CalcDiscriminant();
+            Console.WriteLine($"Equation is: {this}");
+            if (D < 0)
+                Console.WriteLine("There are 0 roots");
+            else
+            {
+                double sqrtD = Math.Sqrt(D);
+                if (sqrtD == 0)
+                {
+                    double x = CalcX(sqrtD);
+                    Console.WriteLine("There are 1 root");
+                    Console.WriteLine($"x = {x}");
+                }
+                else
+                {
+                    double x1 = CalcX(sqrtD);
+                    double x2 = CalcX(sqrtD * -1);
+                    Console.WriteLine("There are 2 root");
+                    Console.WriteLine($"x1 = {x1}");
+                    Console.WriteLine($"x2 = {x2}");
+                }
+            }
+        }
         public override string? ToString()
         {
             string res = $"";
