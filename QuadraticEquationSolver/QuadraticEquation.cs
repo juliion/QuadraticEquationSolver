@@ -15,7 +15,10 @@ namespace QuadraticEquationSolver
         {
             return B * B - 4 * A * C;
         }
-
+        public double CalcX(double sqrtD)
+        {
+            return (-1 * B + sqrtD) / (2 * A);
+        }
         public override string? ToString()
         {
             string res = $"";
