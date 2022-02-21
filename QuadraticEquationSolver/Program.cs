@@ -39,7 +39,7 @@ namespace QuadraticEquationSolver
                     Console.Write("Enter a: ");
                     buff = Console.ReadLine();
                     Console.Clear();
-                } while (!double.TryParse(buff, out a));
+                } while (!double.TryParse(buff, out a) || a == 0);
                 do
                 {
                     Console.Write("Enter b: ");
