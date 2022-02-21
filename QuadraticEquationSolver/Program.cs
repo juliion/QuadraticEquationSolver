@@ -11,47 +11,55 @@ namespace QuadraticEquationSolver
         {
             if(args.Length == 1)
             {
-                string filename  = args[0];
-                if(File.Exists(filename))
+                try
                 {
-                    string str = File.ReadAllText(filename);
-                    string[] coefStr = str.Split(' ');
-                    double[] coef = new double[coefStr.Length];
-                    for (int i = 0; i < coefStr.Length; i++)
+                    string filename = args[0];
+                    if (File.Exists(filename))
                     {
-                        coef[i] = double.Parse(coefStr[i]);
+                        string str = File.ReadAllText(filename);
+                        string[] coefStr = str.Split(' ');
+                        double[] coef = new double[coefStr.Length];
+                        for (int i = 0; i < coefStr.Length; i++)
+                        {
+                            if (!double.TryParse(coefStr[i], out coef[i]))
+                                throw new Exception("invalid file format");
+                        }
+                        if (coef[0] == 0)
+                            throw new Exception("a cannot be 0");
+                        QuadraticEquation qm = new QuadraticEquation()
+                        {
+                            A = coef[0],
+                            B = coef[1],
+                            C = coef[2]
+                        };
+                        qm.Solve();
                     }
-                    QuadraticEquation qm = new QuadraticEquation()
-                    {
-                        A = coef[0],
-                        B = coef[1],
-                        C = coef[2]
-                    };
-                    qm.Solve();
+                    else
+                        throw new Exception($"file {filename} does not exist");
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine($"Error: {e.Message}");
                 }
             }
             else
             {
-                string buff;
                 double a, b, c;
                 do
                 {
                     Console.Write("Enter a: ");
-                    buff = Console.ReadLine();
                     Console.Clear();
-                } while (!double.TryParse(buff, out a) || a == 0);
+                } while (!double.TryParse(Console.ReadLine(), out a) || a == 0);
                 do
                 {
                     Console.Write("Enter b: ");
-                    buff = Console.ReadLine();
                     Console.Clear();
-                } while (!double.TryParse(buff, out b));
+                } while (!double.TryParse(Console.ReadLine(), out b));
                 do
                 {
                     Console.Write("Enter с: ");
-                    buff = Console.ReadLine();
                     Console.Clear();
-                } while (!double.TryParse(buff, out c));
+                } while (!double.TryParse(Console.ReadLine(), out c));
                 QuadraticEquation qm = new QuadraticEquation()
                 {
                     A = a,
