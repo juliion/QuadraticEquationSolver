@@ -48,17 +48,14 @@ namespace QuadraticEquationSolver
                 do
                 {
                     Console.Write("Enter a: ");
-                    Console.Clear();
                 } while (!double.TryParse(Console.ReadLine(), out a) || a == 0);
                 do
                 {
                     Console.Write("Enter b: ");
-                    Console.Clear();
                 } while (!double.TryParse(Console.ReadLine(), out b));
                 do
                 {
                     Console.Write("Enter с: ");
-                    Console.Clear();
                 } while (!double.TryParse(Console.ReadLine(), out c));
                 QuadraticEquation qm = new QuadraticEquation()
                 {
