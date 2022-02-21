@@ -85,7 +85,7 @@
  
  **revert-коміт**: https://github.com/juliion/QuadraticEquationSolver/commit/3b4e37ac52b2d513b647574fcd4b55d59d9d6381
 
- 
+ **Виконала: ** Іонова Юлія, ІП-03
  
 
 
